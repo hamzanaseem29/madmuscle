@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* From Uiverse.io by qhns3 */ 
+.container {
+  max-width: 1920px;
+  width: 100%;
+  height: 100%;
+
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.258);
+
+  background-image: linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+  background-size: var(--gap) var(--gap);
+}
+
+.agreement-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.custom-flex {
+  align-items: center;
+  display: flex;
+  background-color: var(--color-black80);
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  display: none;
+}
+
+.checkbox-custom {
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #5b5b5b;
+  /* border-radius: 4px; */
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+}
+
+.checkbox-custom::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  border: solid #5b5b5b;
+  border-width: 0 3px 3px 0;
+  top: 2px;
+  left: 8px;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-checkbox:checked + .checkbox-custom::after {
+  opacity: 1;
+}
+
+
+.terms-text,
+.updates-text {
+
+  color: var(--color-black0);
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 1920px;
+    width: 100%;
+    height: 100%;
+  
+    --gap: 3em;
+    --line: 1px;
+    --color: rgba(255, 255, 255, 0.183);
+  
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      ),
+      linear-gradient(
+        0deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      );
+    background-size: var(--gap) var(--gap);
+  }
+  .continue-btn{
+    width: 100%;
+  }
+}
+.css-cp2j25-MuiSlider-thumb{
+  background-color: #FF4400;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border: 1px solid black;
+  width: 28px;
+  height: 28px;
+}
+
+
+.css-7o8aqz-MuiSlider-rail {
+  background-color: #A32B00;
+  height: 8px;
+  border-radius: 0px;
+  opacity: 100%;
+
+}
+.css-ttgsjq-MuiSlider-track{
+  background-color: transparent;
+  border: none;
+  border-radius: 0px;
+  height: 8px;
+}
+.css-z5sdnj-MuiSlider-mark{
+  background-color: #121212;
+  height: 8px;
+  width: 1px;
+}
+.css-hzp7sc-MuiSlider-mark{
+  background-color: #121212;
+  height: 8px;
+  width: 1px;
+}
+/* Hide all slider mark labels by default */
+.MuiSlider-markLabel {
+  font-family: "Poppins", sans-serif;
+ margin-top: 10px;
+  color: transparent; /* Hide all labels */
+}
+
+/* Show the label with data-index="0" (first label) */
+.MuiSlider-markLabel[data-index="0"] {
+  color: white; /* Show label at index 0 */
+  margin-left: 20px;
+}
+
+/* Show the label with data-index="7" (last label) */
+.MuiSlider-markLabel[data-index="7"] {
+  color: white; /* Show label at index 7 */
+ margin-left: -20px;
+  
+}
+
+/* Make the value label always visible */
+.css-14gyywz-MuiSlider-valueLabel {
+  z-index: 1;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  position: absolute;
+  background-color: #393939;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.8rem;
+  transform: translateY(-100%) scale(1); /* Make sure it's scaled at 1 (visible) */
+  top: -10px;
+  transform-origin: bottom center;
+  opacity: 1; /* Ensure visibility */
+  visibility: visible; /* Force visibility */
+}
+/* Remove the blue ring (focus outline) and shadow on the thumb */
+.css-cp2j25-MuiSlider-thumb {
+  outline: none;             /* Remove focus ring */
+  box-shadow: none;          /* Remove any shadow */
+}
+
+/* Ensure that it stays hidden when focused or active */
+.css-cp2j25-MuiSlider-thumb:focus,
+.css-cp2j25-MuiSlider-thumb:active,
+.css-cp2j25-MuiSlider-thumb:hover {
+  outline: none;             /* Remove focus outline on all states */
+  box-shadow: none;          /* Remove shadow on all states */
+}
+
+.bg-pro {
+  background: url(../../public/bg.svg) center 2px / contain no-repeat;
+  padding: 96px 0px 45px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.continue-btn{
+  display: inline-flex;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 16px;
+  
+  align-items: center;
+  border-radius: 0px;
+  background: #FF4400;
+}
